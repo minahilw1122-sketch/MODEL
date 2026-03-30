@@ -9,11 +9,22 @@ It exposes endpoints for testing and making predictions with JSON inputs.
 ## Folder Structure
 ```
 model_api/
-├── main.py           # FastAPI app with endpoints
-├── xgb_model.pkl     # Trained XGBoost model
-├── requirements.txt  # Python dependencies
-└── README.md         # Project documentation
+├── training/
+│   ├── XGBboosting.ipynb     # Model training notebook
+│   └── cleaned_dataset.csv   # Dataset used for training
+├── main.py                   # FastAPI app with endpoints
+├── xgb_model.pkl             # Trained XGBoost model
+├── Requirements.txt          # Python dependencies
+└── README.md                 # Project documentation
 ```
+
+---
+
+## Model Training
+The model was trained using **XGBoost** on a cleaned sales dataset.  
+See the `training/` folder for the full training pipeline including data preprocessing, feature engineering, and model evaluation.
+
+The trained model is exported as `xgb_model.pkl` and loaded directly by the API.
 
 ---
 
@@ -36,7 +47,7 @@ source venv/bin/activate
 
 3. **Install dependencies**
 ```bash
-pip install -r requirements.txt
+pip install -r Requirements.txt
 ```
 
 4. **Run the API locally**
@@ -121,7 +132,7 @@ Test all endpoints interactively.
 - XGBoost
 - Pydantic
 
-All listed in `requirements.txt` for easy installation.
+All listed in `Requirements.txt` for easy installation.
 
 ---
 
@@ -130,7 +141,7 @@ All listed in `requirements.txt` for easy installation.
 - Ensure `xgb_model.pkl` is in the same folder as `main.py`.
 - For testing across devices, run Uvicorn with:
 ```bash
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn main:app --host 0.0.0.0 --port 10000 --reload
 ```
 
 - Use your PC's local IP to access from another device:
