@@ -1,3 +1,11 @@
+---
+title: Model Api
+emoji: 🚀
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
 # FastAPI XGBoost Prediction API
 
 ## Project Overview
